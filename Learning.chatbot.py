@@ -33,3 +33,6 @@ def chatbot():
             reply = input("Teach me: ")
             memory[user] = reply
             print("AI: Got it! I'll remember that.")
+
+if __name__ == "__main__":
+    chatbot()
