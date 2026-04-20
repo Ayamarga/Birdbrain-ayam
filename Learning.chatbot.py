@@ -16,13 +16,13 @@ def save_memory():
         json.dump(memory, f)
 
 def chatbot():
-    print("Learning Chatbot 🤖 (type 'exit' to quit)")
+    print("Learning Chatbot (type 'exit' to quit)")
     print("If I don’t know something, teach me!")
 
     while True:
         user = input("You: ").lower()
         if user == "exit":
-            print("AI: Bye! 👋")
+            print("AI: Bye!")
             save_memory()
             break
 
