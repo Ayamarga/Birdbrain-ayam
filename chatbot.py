@@ -19,21 +19,21 @@ def load_memory():
     else:
         memory = {}
 
-# Fungsi untuk save memory saat keluar
+
 def save_memory():
     with open(MEMORY_FILE, "w") as f:
         json.dump(memory, f)
 
-# Chatbot utama
+
 def chatbot():
     load_memory()
-    print("Learning Chatbot 🤖 (type 'exit' to quit)")
+    print("Learning Chatbot (type 'exit' to quit)")
     print("If I don’t know something, teach me!")
 
     while True:
         user = input("You: ").lower()
         if user == "exit":
-            print("AI: Bye! 👋")
+            print("AI: Bye!")
             save_memory()
             break
 
@@ -45,14 +45,14 @@ def chatbot():
             memory[user] = reply
             print("AI: Got it! I'll remember that.")
 
-# Jalankan program
+
 if __name__ == "__main__":
     chatbot()
     
     from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
-# Data training kecil
+
 X = ["hi", "hello", "hey", "bye", "goodbye", "see you"]
 y = ["greet", "greet", "greet", "farewell", "farewell", "farewell"]
 
@@ -65,13 +65,13 @@ clf.fit(X_vec, y)
 while True:
     user = input("You: ").lower()
     if user == "exit":
-        print("AI: Bye! 👋")
+        print("AI: Bye!")
         break
 
     pred = clf.predict(vec.transform([user]))[0]
     if pred == "greet":
-        print("AI: Hello! 👋")
+        print("AI: Hello!")
     elif pred == "farewell":
-        print("AI: Goodbye! 👋")
+        print("AI: Goodbye!")
     else:
-        print("AI: I don't know yet...")
+        print("AI: I don't know yet.")
